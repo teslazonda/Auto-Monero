@@ -14,7 +14,7 @@ echo "*****************************"
 
 echo "Install Developer Tools"
 echo "*****************************"
-sudo dnf groupinstall "Development Tools" "Development Libraries"
+sudo dnf -y groupinstall "Development Tools" "Development Libraries"
 
 echo "Update all packages again"
 echo "*****************************"
