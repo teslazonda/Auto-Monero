@@ -5,7 +5,9 @@
 # This is free software, and you are welcome to redistribute it under certain conditions. 
 
 cd ~ 
+echo "Create Monero-Stuff directory"
 mkdir Monero-Stuff && cd Monero-Stuff
+
 echo "Update all packages"
 sudo dnf -y update
 echo "*****************************"
