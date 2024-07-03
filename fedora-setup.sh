@@ -12,9 +12,9 @@ echo "Update all packages"
 sudo dnf -y update
 echo "*****************************"
 
-echo "Install Developer Tools group"
+echo "Install Developer Tools"
 echo "*****************************"
-sudo dnf -y groupinstall "Development Tools"
+sudo dnf groupinstall "Development Tools" "Development Libraries"
 
 echo "Update all packages again"
 echo "*****************************"
@@ -45,7 +45,7 @@ cmake .. -DXMRIG_DEPS=scripts/deps
 
 echo "making XMRig"
 
-make
+make -j$(nproc)
 
 echo "Completed XMRig build"
 
