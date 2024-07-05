@@ -8,25 +8,34 @@ cd ~
 echo "Create Monero-Stuff directory"
 mkdir Monero-Stuff && cd Monero-Stuff
 
+echo "Creating Monero-Stuff directory here:"
+pwd
+sleep 2
+
 echo "Update all packages"
+sleep 2
 sudo dnf -y update
 echo "*****************************"
 
 echo "Install Developer Tools"
 echo "*****************************"
+sleep 2
+
 sudo dnf -y groupinstall "Development Tools" "Development Libraries"
 
 echo "Update all packages again"
 echo "*****************************"
+sleep 2
 sudo dnf -y update
 
 echo "Install dependencies for Monero node"
 # These are subject to change
+# Additional packages outside of dependencies added here for convenience
 
 sudo dnf -y install git gcc-c++ boost-devel miniupnpc-devel graphviz \
   doxygen libunwind-devel libunwind jsoncpp-devel libcurl-devel \
   openssl-devel pkgconfig libconfig-devel libevent-devel \
-  libtool cmake perl
+  libtool cmake perl vim zsh
 
 # Install XMRig dependencies
 sudo dnf install -y git make cmake gcc gcc-c++ libstdc++-static automake libtool autoconf
