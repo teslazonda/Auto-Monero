@@ -30,11 +30,12 @@ sudo dnf -y update
 
 echo "Install dependencies for Monero node"
 # These are subject to change
+# Additional packages outside of dependencies added here for convenience
 
 sudo dnf -y install git gcc-c++ boost-devel miniupnpc-devel graphviz \
   doxygen libunwind-devel libunwind jsoncpp-devel libcurl-devel \
   openssl-devel pkgconfig libconfig-devel libevent-devel \
-  libtool cmake perl
+  libtool cmake perl vim zsh
 
 # Install XMRig dependencies
 sudo dnf install -y git make cmake gcc gcc-c++ libstdc++-static automake libtool autoconf
