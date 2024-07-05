@@ -34,4 +34,5 @@ jobs:
         run: |
           pwd
           ls
+          ./debian-setup.sh
           echo Testing debian script...
