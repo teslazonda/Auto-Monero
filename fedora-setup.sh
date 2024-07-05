@@ -8,16 +8,24 @@ cd ~
 echo "Create Monero-Stuff directory"
 mkdir Monero-Stuff && cd Monero-Stuff
 
+echo "Creating Monero-Stuff directory here:"
+pwd
+sleep 2
+
 echo "Update all packages"
+sleep 2
 sudo dnf -y update
 echo "*****************************"
 
 echo "Install Developer Tools"
 echo "*****************************"
+sleep 2
+
 sudo dnf -y groupinstall "Development Tools" "Development Libraries"
 
 echo "Update all packages again"
 echo "*****************************"
+sleep 2
 sudo dnf -y update
 
 echo "Install dependencies for Monero node"
