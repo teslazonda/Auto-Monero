@@ -15,3 +15,4 @@ For example, on Fedora run the following commands within the `Auto-Monero` direc
 `./fedora-setup.sh`
 
 You will prompted to enter your `sudo` password several times while the script is running.
+
