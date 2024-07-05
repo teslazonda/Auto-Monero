@@ -4,7 +4,7 @@ A repository of bash scripts for automating the install of Monero-related softwa
 
 Scripts in this repository will install the following software:  
 
-* XMRig
+* XMRig and XMRig dependencies
 
 Get this repo with the following commands:
 
