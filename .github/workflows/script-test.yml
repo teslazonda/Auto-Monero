@@ -33,6 +33,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           pwd
-          ls
+          chmod +x debian-setup.sh
           ./debian-setup.sh
           echo Testing debian script...
