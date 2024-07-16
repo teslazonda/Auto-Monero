@@ -34,6 +34,8 @@ pwd
 
 
 echo "creating xmrig build and entering xmrig/scripts folder"
+cd ..
+cd ..
 echo "*******"
 pwd
 echo "*******"
