@@ -29,7 +29,7 @@ git clone https://github.com/xmrig/xmrig.git
 sleep 2
 
 echo "Make xmrig donation 0%"
-cd xmrig/src && sed -i 's/1/0/g' donate.h && cd ../../
+cd xmrig/src && sed -i 's/1/0/g' donate.h && cd ../
 pwd
 
 
