@@ -11,7 +11,7 @@ Run the script that matches your local linux distribution.
 
 For example, on Fedora run the following commands within the `Auto-Monero` directory.
 
-`chmod +x ./fedora-setup.sh`
+`chmod +x ./fedora-setup.sh`  
 `./fedora-setup.sh`
 
 You will prompted to enter your `sudo` password several times while the script is running.
