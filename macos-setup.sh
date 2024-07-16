@@ -21,7 +21,7 @@ sleep 2
 brew update && brew upgrade
 
 echo "Install XMRig dependencies"
-brew install cmake wget automake libtool autoconf
+brew install cmake wget automake libtool autoconf libuv openssl hwloc
 sleep 2
 
 echo "Install xmrig"
