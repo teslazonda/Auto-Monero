@@ -37,9 +37,9 @@ jobs:
           ./debian-setup.sh
           echo Testing debian script...
 
-  build-fedora:
+  build-macos:
     # The type of runner that the job will run on
-    runs-on: self-hosted
+    runs-on: macos-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -50,9 +50,9 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run fedora setup
+      - name: Run macos setup
         run: |
           pwd
-          chmod +x fedora-setup.sh
-          ./fedora-setup.sh
-          echo Testing fedora script...
+          chmod +x macos-setup.sh
+          ./macos-setup.sh
+          echo Testing macos script...
