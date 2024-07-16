@@ -34,8 +34,10 @@ pwd
 
 
 echo "creating xmrig build and entering xmrig/scripts folder"
-mkdir xmrig/build && cd xmrig/scripts
+echo "*******"
 pwd
+echo "*******"
+mkdir xmrig/build && cd xmrig/scripts
 sleep 2
 
 ./build.hwloc.sh && cd ../build
