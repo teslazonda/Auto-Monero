@@ -4,7 +4,7 @@
 # This program comes with ABSOLUTELY NO WARRANTY;
 # This is free software, and you are welcome to redistribute it under certain conditions.
 
-cd ~ 
+cd ~
 echo "Create Monero-Stuff directory"
 mkdir Monero-Stuff && cd Monero-Stuff
 
@@ -21,7 +21,7 @@ sleep 2
 brew update && brew upgrade
 
 echo "Install XMRig dependencies"
-brew install cmake wget automake libtool autoconf
+brew install cmake wget automake libtool autoconf libuv openssl hwloc
 sleep 2
 
 echo "Install xmrig"
@@ -29,13 +29,17 @@ git clone https://github.com/xmrig/xmrig.git
 sleep 2
 
 echo "Make xmrig donation 0%"
-cd xmrig/src && sed -i 's/1/0/g' donate.h && cd ../../
+cd xmrig/src && sed -i 's/1/0/g' donate.h
 pwd
 
 
 echo "creating xmrig build and entering xmrig/scripts folder"
-mkdir xmrig/build && cd xmrig/scripts
+cd ..
+cd ..
+echo "*******"
 pwd
+echo "*******"
+mkdir xmrig/build && cd xmrig/scripts
 sleep 2
 
 ./build.hwloc.sh && cd ../build
