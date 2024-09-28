@@ -23,5 +23,6 @@ chmod +x ./fedora-setup.sh
 ./fedora-setup.sh
 ```
 
-You will prompted to enter your `sudo` password several times while the script is running.
-
+### Notes
+* You will prompted to enter your `sudo` password several times while the script is running.  
+* Xmrig will be [built from source](https://xmrig.com/docs/miner/build). Compile times may vary.
