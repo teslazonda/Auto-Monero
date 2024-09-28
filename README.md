@@ -1,19 +1,23 @@
 # Auto-Monero
 
-A repository of bash scripts for automating the install of Monero-related software.
+A collection of shell scripts for automating the installation of Monero-related software.
 
 Scripts in this repository will install the following software:  
 
-* XMRig and XMRig dependencies
+* [XMRig](https://xmrig.com)
+* XMRig dependencies
 
-Get this repo with the following commands:
+## Installation
+
+Download an install Auto-Monero scripts with the following commands:
 
 
-`git clone https://github.com/teslazonda/Auto-Monero.git`
+`git clone https://github.com/teslazonda/Auto-Monero.git`  
+`cd Auto-Monero`
 
-Run the script that matches your local linux distribution.
+Run the script that matches your local operating system.
 
-For example, on Fedora run the following commands within the `Auto-Monero` directory.
+For example, on Fedora linux run the following commands within the `Auto-Monero` directory.
 ```bash
 chmod +x ./fedora-setup.sh
 ./fedora-setup.sh
