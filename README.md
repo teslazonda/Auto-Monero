@@ -9,16 +9,17 @@ Scripts in this repository will install the following software:
 
 ## Installation
 
-Download an install Auto-Monero scripts with the following commands:
+Download Auto-Monero scripts with the following commands:
 
 
-`git clone https://github.com/teslazonda/Auto-Monero.git`  
-`cd Auto-Monero`
-
+```shell
+git clone https://github.com/teslazonda/Auto-Monero.git   
+cd Auto-Monero
+```
 Run the script that matches your local operating system.
 
 For example, on Fedora linux run the following commands within the `Auto-Monero` directory.
-```bash
+```shell
 chmod +x ./fedora-setup.sh
 ./fedora-setup.sh
 ```
