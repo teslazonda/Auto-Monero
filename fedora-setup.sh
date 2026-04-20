@@ -4,29 +4,33 @@
 # This program comes with ABSOLUTELY NO WARRANTY;
 # This is free software, and you are welcome to redistribute it under certain conditions. 
 
-cd ~ 
-echo "Create Monero-Stuff directory"
-mkdir Monero-Stuff && cd Monero-Stuff
+set -euo pipefail  # Exit on error, undefined vars, pipe failures
+# Configuration
+WORK_DIR="$HOME/Monero-Stuff"
+XMRIG_DIR="$WORK_DIR/xmrig"
 
-echo "Creating Monero-Stuff directory here:"
-pwd
-sleep 2
+# Exit handler
+trap 'echo "Error on line $LINENO"; exit 1' ERR
+
+# Verify prerequisites
+command -v sudo &> /dev/null || { echo "sudo required"; exit 1; }
+
+# Create working directory
+mkdir -p "$WORK_DIR" && cd "$WORK_DIR"
+echo "Working directory: $PWD"
 
 echo "Update all packages"
-sleep 2
-sudo dnf -y update
+sudo dnf -y upgrade
 echo "*****************************"
 
 echo "Install Developer Tools"
 echo "*****************************"
-sleep 2
-
-sudo dnf -y groupinstall "Development Tools" "Development Libraries"
+sudo dnf -y group install development-tools c-development
 
 echo "Update all packages again"
 echo "*****************************"
-sleep 2
-sudo dnf -y update
+sudo dnf -y upgrade
+echo "*****************************"
 
 echo "Install dependencies for Monero node"
 # These are subject to change
@@ -42,13 +46,13 @@ sudo dnf install -y git make cmake gcc gcc-c++ libstdc++-static automake libtool
 # Get XMRig soure code
 git clone https://github.com/xmrig/xmrig.git
 
-mkdir xmrig/build
+mkdir -p "$XMRIG_DIR/build"
 
-# Replace the 1% donation with 0
-cd xmrig/src && sed -i 's/1/0/g' donate.h && cd ../../
+# Remove the 1% default donation
+cd $XMRIG_DIR/src && sed -i 's/1/0/g' donate.h && cd ../../
 
-# Build dependencies
-cd xmrig/scripts && ./build_deps.sh && cd ../build
+cd "$XMRIG_DIR/scripts" && ./build_deps.sh
+cd "$XMRIG_DIR/build"
 
 cmake .. -DXMRIG_DEPS=scripts/deps
 
@@ -56,5 +60,4 @@ echo "making XMRig"
 
 make -j$(nproc)
 
-echo "Completed XMRig build"
-
+echo "XMRig build completed successfully."
