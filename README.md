@@ -1,6 +1,7 @@
 # Auto-Monero
 
 A collection of shell scripts for automating the installation of Monero-related software.
+[Monero](https://www.getmonero.org) is a private, decentralized cryptocurrency.
 
 Scripts in this repository will install the following software:  
 
