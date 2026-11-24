@@ -56,3 +56,26 @@ jobs:
           chmod +x macos-setup.sh
           ./macos-setup.sh
           echo Testing macos script...
+
+# Test the fedora-setup.sh script on an Ubuntu runner inside a Fedora container
+  build-fedora:
+      runs-on: ubuntu-latest
+      container:
+        image: fedora:latest
+
+      steps:
+        # The minimal Fedora image lacks some tools that checkout and scripts expect
+        - name: Install base tools
+          run: dnf install -y git tar sudo which
+
+        - uses: actions/checkout@v4
+
+        - name: Run a one-line script
+          run: echo Hello, world!
+
+        - name: Run fedora setup
+          run: |
+            pwd
+            chmod +x fedora-setup.sh
+            ./fedora-setup.sh
+            echo Testing fedora script...
